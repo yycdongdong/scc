@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 public class A61 {
     public static void main(String[] args) {
         SpringApplication.run(A61.class, args);
-        System.out.println("rk61");
+
     }
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
