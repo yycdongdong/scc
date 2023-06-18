@@ -1,0 +1,24 @@
+spring:
+  config:
+    import: classpath:bootstrap.yml
+server:
+  port: 8082
+ #eureka:
+ # client:
+ #   service-url:
+ #     defaultZone: http://127.0.0.1:8081/eureka
+scaclient:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+ribbon:
+  #eager-load:
+    #enabled: true # 开启饥饿加载
+    #clients: # 指定饥饿加载的服务名称
+      #- scaclient
+  #eureka:
+    #enabled: true
+  eager-load:
+    enabled: true
+    clients:
+      - scaclient

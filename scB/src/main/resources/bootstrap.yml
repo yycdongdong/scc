@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: scbclient
+  cloud:
+    nacos:
+      config:
+        enabled: false
+        file-extension: yaml
+        #group: testnacos
+        #namespace: B61
+      server-addr: 127.0.0.1:10086
+      discovery:
+        cluster-name: HZ #杭州

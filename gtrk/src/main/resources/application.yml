@@ -1,0 +1,40 @@
+
+server:
+  port: 8083
+spring:
+  application:
+    name: scgateway
+  main:
+    web-application-type: reactive
+  cloud:
+    nacos:
+      config:
+        enabled: false
+        file-extension: yaml
+        #group: testnacos
+        #namespace: B61
+      server-addr: 127.0.0.1:10086
+      discovery:
+        cluster-name: SH
+    gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true #允许option请求通过
+        cors-configurations:
+          '[/**]': #拦截那些请求，此处表示拦截所有请求
+            allowedOrigins:
+              - "http://localhost"
+              - "http://localhost"
+            allowedMethods:
+              - "GET"
+              - "POST"
+              - "DELETE"
+              - "PUT"
+              - "OPSTIONS"
+            allowedHeaders: "*"
+            allowedCredentials: true
+            maxAge: 360000
+      routes:
+        - id: SHgateway
+          uri: lb://scaclient
+          predicates:
+            - Path=/userinfo

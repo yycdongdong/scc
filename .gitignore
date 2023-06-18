@@ -1,0 +1,6 @@
+# 项目排除路径
+/gtrk/target/
+/RMQ/target/
+/RMQ6/target/
+/scA/target/
+/scB/target/

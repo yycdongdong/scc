@@ -1,0 +1,7 @@
+spring:
+  rabbitmq:
+    virtual-host: /dong
+    host: 192.168.80.129
+    port: 5672
+    username: dong
+    password: 123456
